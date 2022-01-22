@@ -1,0 +1,42 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Project Menancing | Shrek Hub", 5013109572)
+
+local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+--Pages/section
+local Itemfarm = venyx:addPage("Item farm", 5012544693)
+local Player = venyx:addPage("Player")
+local Credits = venyx:addPage("Credits")
+local ItemfarmSection = Itemfarm:addSection("Item farm")
+local PlayerSection = Player:addSection("Player")
+local CreditsSection = Credits:addSection("Credits")
+
+-- Item farm
+ItemfarmSection:addToggle("Rokakaka farm", nil, function(r)
+    getfenv().Rokaka = r
+    while Rokaka do
+    player.CFrame = workspace:WaitForChild("StandRokakaka").Handle.CFrame
+    wait(.1)
+    end
+end)
+
+ItemfarmSection:addToggle("Arrow farm", nil, function(a)
+    getfenv().Arrow = a
+    while Arrow do
+    player.CFrame = workspace:WaitForChild("StandArrow").Handle.CFrame
+    wait(.1)
+    end
+end)
+
+--Player
+
+
+--Credits
+CreditsSection:addButton("Credits to shrek hub", function()
+end)
+CreditsSection:addButton("Click to copy the discord link", function()
+setclipboard("https://discord.gg/ZhHmETua")
+end)
+CreditsSection:addButton("Destroy gui", function()
+game.CoreGui["Project Menancing | Shrek Hub"]:Remove()
+end)
